@@ -1,0 +1,37 @@
+# =====================================================================
+# KISISEL VERILER — asla commit edilmez
+# (sifreli kasa, ayarlar, ikon onbellegi, yedekler, disa aktarimlar)
+# =====================================================================
+data/
+**/data/
+data-dev/
+*.enc
+salt.bin
+*.vault
+VaultDesk-Backup-*
+vaultdesk_export*
+*.csv
+crash.log
+backups/
+
+# =====================================================================
+# Bagimliliklar ve derleme ciktilari
+# Kurulum paketi YALNIZCA release/ altinda tutulur
+# =====================================================================
+node_modules/
+dist/
+*.exe
+!release/VaultDesk_Setup.exe
+*.blockmap
+
+# =====================================================================
+# Isletim sistemi / editor / gecici
+# =====================================================================
+Thumbs.db
+desktop.ini
+.DS_Store
+.vscode/
+.idea/
+*.bak
+*.tmp
+*.log

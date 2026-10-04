@@ -1,0 +1,49 @@
+{
+  "name": "vaultdesk",
+  "productName": "VaultDesk",
+  "version": "2.4.0",
+  "description": "VaultDesk Pro - encrypted desktop password manager by Devilt Interactive",
+  "main": "main.js",
+  "author": "Devilt Interactive",
+  "license": "UNLICENSED",
+  "scripts": {
+    "start": "electron .",
+    "test": "node test/vault-crypto.test.js",
+    "dist": "electron-builder --win nsis"
+  },
+  "devDependencies": {
+    "electron": "33.4.11",
+    "electron-builder": "^25.1.8"
+  },
+  "build": {
+    "appId": "com.devilt.vaultdesk",
+    "productName": "VaultDesk",
+    "executableName": "VaultDesk",
+    "copyright": "Â© Devilt Interactive",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "main.js",
+      "preload.js",
+      "vault-crypto.js",
+      "csv.js",
+      "app.config.json",
+      "src/**/*",
+      "package.json"
+    ],
+    "win": {
+      "target": "nsis",
+      "icon": "src/assets/logo.ico",
+      "artifactName": "VaultDesk_Setup.${ext}"
+    },
+    "nsis": {
+      "installerIcon": "src/assets/logo.ico",
+      "uninstallerIcon": "src/assets/logo.ico",
+      "installerHeaderIcon": "src/assets/logo.ico",
+      "shortcutName": "VaultDesk Pro",
+      "uninstallDisplayName": "VaultDesk Pro",
+      "deleteAppDataOnUninstall": false
+    }
+  }
+}

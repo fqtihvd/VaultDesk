@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'">
+<title>VaultDesk Pro</title>
+<script src="theme-boot.js"></script>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ================= LISANS ================= -->
+<div id="screen-license" class="screen screen-auth hidden">
+  <div class="auth-card">
+    <div class="auth-logo"><img src="assets/logo.png" alt="" /></div>
+    <h1>VaultDesk Pro</h1>
+    <div class="brand-signature"><img class="brand-logo" src="assets/devilt_logo.png" alt="" width="22" height="22" /><span>by Devilt Interactive</span></div>
+    <h2 class="auth-section" data-i18n="license_title"></h2>
+    <p class="muted" data-i18n="license_desc"></p>
+    <form id="license-form" autocomplete="off">
+      <input id="license-key" type="text" spellcheck="false" data-i18n-placeholder="license_key_placeholder" />
+      <button type="submit" class="btn-primary btn-block" id="license-submit" data-i18n="license_verify_btn"></button>
+    </form>
+    <p id="license-status" class="status-line"></p>
+  </div>
+</div>
+
+<!-- ================= GIRIS / KASA OLUSTURMA ================= -->
+<div id="screen-auth" class="screen screen-auth hidden">
+  <div class="auth-corner">
+    <div class="theme-switch"></div>
+    <select id="auth-lang" class="lang-select"></select>
+  </div>
+  <div class="auth-card">
+    <div class="auth-logo"><img src="assets/logo.png" alt="" /></div>
+    <h1>VaultDesk Pro</h1>
+    <div class="brand-signature"><img class="brand-logo" src="assets/devilt_logo.png" alt="" width="22" height="22" /><span>by Devilt Interactive</span></div>
+    <p id="auth-subtitle" class="muted"></p>
+    <form id="auth-form" autocomplete="off">
+      <input id="auth-password" type="password" autocomplete="new-password" data-i18n-placeholder="master_password_placeholder" />
+      <input id="auth-password2" type="password" autocomplete="new-password" class="hidden" data-i18n-placeholder="master_password_repeat_placeholder" />
+      <button type="submit" class="btn-primary btn-block" id="auth-submit"></button>
+    </form>
+    <p id="auth-error" class="error hidden"></p>
+    <p id="auth-warning" class="hint hidden" data-i18n="setup_warning"></p>
+    <div id="auth-import" class="auth-import hidden">
+      <p id="auth-legacy" class="hint hidden"></p>
+      <button type="button" class="btn-secondary btn-block hidden" id="auth-use-legacy" data-i18n="import_existing_use"></button>
+      <button type="button" class="link-btn" id="auth-import-existing" data-i18n="import_existing_btn"></button>
+    </div>
+    <div class="auth-restore">
+      <button type="button" class="btn-secondary btn-block" id="auth-restore"><span aria-hidden="true">⤒</span> <span data-i18n="backup_import_btn"></span></button>
+    </div>
+  </div>
+</div>
+
+<!-- ================= ANA EKRAN ================= -->
+<div id="screen-main" class="screen hidden">
+  <header class="topbar">
+    <div class="brand"><img src="assets/logo.png" alt="" /><span>VaultDesk Pro</span></div>
+    <button type="button" class="cmdk-trigger wide" id="search-trigger">
+      <span class="cmdk-trigger-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="15" height="15"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M15.5 15.5 21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </span>
+      <span class="cmdk-trigger-text" data-i18n="global_search_placeholder"></span>
+      <kbd>Ctrl K</kbd>
+    </button>
+    <div class="topbar-actions">
+      <div class="theme-switch"></div>
+      <button type="button" class="btn-secondary" id="btn-settings"><span aria-hidden="true">⚙</span> <span data-i18n="btn_settings"></span></button>
+      <button type="button" class="btn-secondary" id="btn-lock" data-i18n="btn_lock"></button>
+    </div>
+  </header>
+  <main id="view" class="view"></main>
+  <footer class="brand-footer">
+    <div class="brand-signature"><img class="brand-logo" src="assets/devilt_logo.png" alt="" width="22" height="22" /><span>by Devilt Interactive</span></div>
+  </footer>
+</div>
+
+<div id="modal-root"></div>
+
+<script src="emoji-data.js"></script>
+<script src="domain.js"></script>
+<script src="i18n.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
